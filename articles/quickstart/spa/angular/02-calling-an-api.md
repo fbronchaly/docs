@@ -108,7 +108,7 @@ The following component demonstrates how to display the `user_metadata` field fr
 
 ```js
 import { Component, OnInit } from '@angular/core';
-import { concatMap, tap } from 'rxjs/operators';
+import { concatMap, tap, pluck } from 'rxjs/operators';
 
 // Import the HttpClient for making API requests
 import { HttpClient } from '@angular/common/http';
@@ -124,7 +124,7 @@ import { AuthService } from '@auth0/auth0-angular';
   styles: [],
 })
 export class UserMetadataComponent implements OnInit {
-  metadata = {};
+  metadata:any = {};
 
   // Inject both AuthService and HttpClient
   constructor(public auth: AuthService, private http: HttpClient) {}
